@@ -1,0 +1,25 @@
+{
+  "name": "bootcamp-js-lemoncode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "rimraf dist && parcel ./src/index.html --open",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vledesma/bootcamp-js-lemoncode.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vledesma/bootcamp-js-lemoncode/issues"
+  },
+  "homepage": "https://github.com/vledesma/bootcamp-js-lemoncode#readme",
+  "devDependencies": {
+    "parcel": "^2.7.0",
+    "rimraf": "^3.0.2"
+  }
+}
