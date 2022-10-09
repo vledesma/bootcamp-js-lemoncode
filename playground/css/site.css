@@ -1,51 +1,56 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   }
 
-  input {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0 32px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    border-radius: 4px;
+.hotels-header h2 {
+  padding: 20px;
+  text-align: center;
   }
 
-.container {
-    margin: auto;
-    width: 50%;
-}
-
-.data,
-.actions {
-    padding: 16px;
-}
-
-.img {
-    text-align: center;
-    margin: 24px 0 12px 0;
-    position: relative;
-}
-
-img.avatar {
-    width: 20%;
-    border-radius: 50%;
-}
-
-button {
-    background-color: #3ec755;
-    border: none;
-    color: white;
-    padding: 10px 24px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
+.hotels-body {
+  margin: auto;
+  max-width: 90%;
   }
 
-button:hover {
-    background-color: #056715;
-}
+.hotel-item {
+  padding: 16px;
+  border-radius:2px;
+  border:1px solid #9c9c9c;
+  display: flex;
+  justify-content: space-between;
+  }
+
+.hotel-name-container {
+  max-width: 300px;
+  }
+
+.hotel-name {
+  text-transform: uppercase;
+  font-size: 32px;
+  font-weight: 700;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+.hotel-description-container {
+  padding-top: 10px;
+  max-width: 300px;
+  }
+
+.hotel-description {
+  font-size: 20px;
+  font-weight: 300;
+  }
+
+.hotel-telephone-container {
+  max-width: 250px;
+  }
+
+.hotel-telephone {
+  text-transform: uppercase;
+  font-size: 32px;
+  font-weight: 700;
+  }
+
+.stars {
+  max-width: 100px;
+  }
