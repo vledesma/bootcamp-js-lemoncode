@@ -3,22 +3,20 @@
 // Ubicación del hotel.
 // Imagen del hotel (puede ser mediante URL).
 
-// var hotel = {
-//     name:"Villa Padierna",
-//     location: "Benahavís",
-//     img: "https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_627,q_auto,w_1200/itemimages/40/06/40061_v9.jpeg",
-// };
+// var nameHotel = "Villa Padierna";
+// var locationHotel = "Benahavís";
+// var imgHotel ="https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_627,q_auto,w_1200/itemimages/40/06/40061_v9.jpeg";
 
-// document.getElementById("name-hotel").innerHTML = "Hotel " + hotel.name;
-// document.getElementById("location-hotel").innerHTML = "Ubicado en " + hotel.location;
-// document.getElementById("img-hotel").src = hotel.img;
+// document.getElementById("name-hotel").innerHTML = "Hotel " + nameHotel;
+// document.getElementById("location-hotel").innerHTML = "Ubicado en " + locationHotel;
+// document.getElementById("img-hotel").src = imgHotel;
 
-//Puntuación del hotel
+// // Puntuación del hotel
 
 // var rating = prompt("Puntúa el hotel del 1 al 5");
-// document.getElementById("rating").innerHTML = "Tu votación es de " + rating + " estrellas &#9734;";
+// document.getElementById("rating").innerHTML = "Tu votación es de " + rating + " estrella/s &#9733;";
 
-//Pregunta anónimo
+// // Pregunta anónimo
 // var anonymous = confirm("¿Quiere que su reseña sea anónima?");
 // document.getElementById("anonymous").checked = anonymous;
 
