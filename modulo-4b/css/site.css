@@ -1,11 +1,17 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-h1 {
+h1, h2 {
   font-size: 32px;
   text-align: center;
-  margin-bottom: 45px;
+  margin-bottom: 25px;
   color:#425062;
 }
 
@@ -36,7 +42,7 @@ input {
   display: flex;
 }
 
-button {
+.button-container button {
   margin: 0 5px;
   width: 25%;
   background: #425062;
@@ -54,16 +60,16 @@ button {
 
 .result-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   margin-top: 20px;
   align-items: center;
+  justify-content: center;
 }
 
-.result-container span {
-  margin-right: 10px;
+span, label {
   color:#425062;
   font-weight: 800;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 h3 {
@@ -80,4 +86,67 @@ h3 {
   border-bottom: solid 2px #3C4857;
 }
 
+.hotel-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
 
+select {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  padding: 0 1em 0 0;
+  margin: 0;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+}
+
+:root {
+  --select-border: #3C4857;
+  --select-focus: #425062;
+  --select-arrow: var(white);
+}
+
+.select-style {
+  width: 100%;
+  min-width: 200px;
+  max-width: 400px;
+  border: 1px solid #3C4857;
+  border-radius: 5px;
+  padding:6px;
+  cursor: pointer;
+  background-color: #fff;
+  margin: 15px 0;
+}
+
+.container-options {
+  margin: 15px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container-options input {
+  margin-top: 5px;
+}
+
+.container-options button {
+  margin: 0 5px;
+  background: #425062;
+  color: #fff;
+  border-radius: 5px;;
+  padding: 5px 10px;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+  border-right: solid 2px #3C4857;
+  border-bottom: solid 2px #3C4857;
+}

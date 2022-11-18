@@ -5,26 +5,73 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/site.css">
-    <title>Calculadora</title>
+    <title>Calculadora secuencial </title>
 </head>
 <body>
-   <h1>Calculator</h1>
+   <h1>Sequential calculator</h1>
    <div class="row">
-        <label for="num-1"></label>
+        <label for="num"></label>
         <input id="num-1">
         <div class="button-container">
             <button id="addition-button">+</button>
             <button id="subtraction-button">-</button>
             <button id="multiplication-button">x</button>
             <button id="division-button">/</button>
+            <button id="result-button">=</button>
         </div>
-        <label for="num-2"></label>
-        <input id="num-2">
    </div>
    <div class="result-container">
-    <span>Your result is:</span>
-        <h3 id="final-result"></h3>
+        <span>Last operation:</span>
+            <h3 id="operations"></h3>
+        <span>Your result is:</span>
+            <h3 id="final-result"></h3>
    </div>
+   <hr>
+   <h2>&#9733; Book your room hotel &#9733;</h2>
+   <div class="hotel-container">
+        <label for="room-select">Type of room</label>
+        <div class="select-style">
+            <select id="room-select">
+                <option disabled selected value> -- select an option -- </option>
+                <option value="standard">Standard</option>
+                <option value="jr_suite">Junior suite</option>
+                <option value="suite">Suite</option>
+            </select>
+        </div>
+        <div class="container-options">
+            <label for="spa_check"><input type="checkbox" id="spa-check" value="spa_checkbox">Do you want to use the Spa?</label><br>
+        </div>
+        <label for="guest-select">Number of guests</label>
+        <div class="select-style">
+            <select id="guest-select">
+                <option disabled selected value> -- select an option -- </option>
+                <option value="single">Single room</option>
+                <option value="double">Double room</option>
+                <option value="triple">Triple room</option>
+            </select>
+        </div>
+        <div class="container-options">
+            <label for="nights_num">How many nights do you want to stay with us? </label>
+            <input id="nights_num" type="number">
+        </div>
+        <div class="container-options">
+            <label for="parking_num">How many parking nights do you need? </label>
+            <input id="parking_num" type="number">
+        </div>
+        <div class="container-options">
+            <button id="calculate-button">
+                Calculate
+            </button>
+
+        </div>
+    </div>
+    <div class="result-container">
+        <span>Total amount to pay:</span>
+        <h3 id="operations"></h3>
+   </div>
+
+
     <script src="js/app.js"></script>
+    <script src="js/hotel.js"></script>
 </body>
 </html>

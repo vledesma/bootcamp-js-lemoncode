@@ -20,7 +20,7 @@ console.log(multiplicacion(4,5));
 
 
 //Recoger inputs de la calculadora
-var number1 = () => parseInt(document.getElementById("num-1").value);
+var number1 = () => document.getElementById("num-1").value;
 var number2 = () => parseInt(document.getElementById("num-2").value);
 
 //Funciones de operaciones
