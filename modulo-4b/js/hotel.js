@@ -16,7 +16,7 @@ var roomTotalPrice = 0;
 var totalNights = 1;
 var totalParkingNights = 0;
 
-// get elements by ID para sacar los valores
+// get elements by ID para sacar los valores del HTML
 var typeOfRoom = document.getElementById("room-select");
 var spaSelected = document.getElementById("spa-check");
 var guestsForRoom = document.getElementById("guest-select");
