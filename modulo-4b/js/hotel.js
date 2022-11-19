@@ -81,4 +81,4 @@ function amountToPay(result) {
 document.getElementById("calculate-button").addEventListener("click", function () {
     var roomTotalPrice = 0;
     amountToPay(calculateTotalPrice(roomTotalPrice));
-  });
+  }); 
