@@ -82,8 +82,8 @@ function priceGuestForRoom() {
 
 //función para calcular el precio total de la habitación en función de si es individual, doble o triple
 function calculateTotalPrice (roomTotalPrice) {
-  roomTotalPrice = priceOfRoom + priceOfRoomWithSpa;//precio de la habitación con o sin habitación
-  switch (numberGuestsRoom) {
+  roomTotalPrice = priceOfRoom + priceOfRoomWithSpa;//precio de la habitación con o sin spa
+  switch (numberGuestsRoom) {//switch para sumar o añadir, default doble en variable global
     case "single":
       roomTotalPrice = roomTotalPrice - (roomTotalPrice * 0.25);
       break;
