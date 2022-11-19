@@ -17,9 +17,9 @@ var totalNights = 1;
 var totalParkingNights = 0;
 
 // get elements by ID para sacar los valores del HTML
-var typeOfRoom = document.getElementById("room-select");
-var spaSelected = document.getElementById("spa-check");
-var guestsForRoom = document.getElementById("guest-select");
+var getTypeOfRoom = document.getElementById("room-select");
+var getSpaSelected = document.getElementById("spa-check");
+var getGuestsForRoom = document.getElementById("guest-select");
 var getNumberNights = document.getElementById("nights_num");
 var getParkingNights = document.getElementById("parking_num");
 
@@ -42,12 +42,12 @@ function parkingNumberNights () {
 
 //función para modificar el precio de la habitación en función del tipo (standard, jr suite o suite)
 function priceTypeOfRoom() {
-  typeOfRoom.addEventListener("change", function () {
-    if (typeOfRoom.value == "standard") {
+  getTypeOfRoom.addEventListener("change", function () {
+    if (getTypeOfRoom.value == "standard") {
       priceOfRoom = 100;
-    } else if (typeOfRoom.value == "jr_suite") {
+    } else if (getTypeOfRoom.value == "jr_suite") {
       priceOfRoom = 120;
-    } else if (typeOfRoom.value == "suite") {
+    } else if (getTypeOfRoom.value == "suite") {
       priceOfRoom = 150;
     }
     amountToPay(calculateTotalPrice(roomTotalPrice)); //función que pinta el resultado en el h3 con id="operations-hotel"
@@ -56,8 +56,8 @@ function priceTypeOfRoom() {
 
 //función para sacar si la reserva tiene SPA o NO SPA
 function priceSpaSelected() {
-  spaSelected.addEventListener("change", function () {
-    if (spaSelected.checked) {
+  getSpaSelected.addEventListener("change", function () {
+    if (getSpaSelected.checked) {
       priceOfRoomWithSpa = 20;
     } else {
       priceOfRoomWithSpa = 0;
@@ -68,12 +68,12 @@ function priceSpaSelected() {
 
 //función para sacar valores del select del nº de invitados (individual, doble o triple)
 function priceGuestForRoom() {
-  guestsForRoom.addEventListener("change", function () {
-    if (guestsForRoom.value == "single") {
+  getGuestsForRoom.addEventListener("change", function () {
+    if (getGuestsForRoom.value == "single") {
         numberGuestsRoom = "single";
-    } else if (guestsForRoom.value == "double") {
+    } else if (getGuestsForRoom.value == "double") {
         numberGuestsRoom = "double";
-    } else if (guestsForRoom.value == "triple") {
+    } else if (getGuestsForRoom.value == "triple") {
         numberGuestsRoom = "triple";
     }
     amountToPay(calculateTotalPrice(roomTotalPrice)); //función que pinta el resultado en el h3 con id="operations-hotel"

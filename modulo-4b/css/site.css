@@ -150,3 +150,15 @@ select {
   border-right: solid 2px #3C4857;
   border-bottom: solid 2px #3C4857;
 }
+
+.result-container-span {
+  display: flex;
+  align-items: center;
+}
+
+.euro {
+  margin: 0 5px;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
