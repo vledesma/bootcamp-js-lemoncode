@@ -112,5 +112,5 @@ function amountToPay(result) {
 
 //función del botón Calcular se añade en cada una de las funciones anteriores para ir pintando los resultados
 document.getElementById("calculate-button").addEventListener("click", function () {
-    amountToPay(calculateTotalPrice(roomTotalPrice));
+    amountToPay(calculateTotalPrice(roomTotalPrice));//pinta el resultado obtenido de calculateTotalPrice
   });
