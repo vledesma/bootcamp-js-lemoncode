@@ -9,12 +9,31 @@
 
 var priceOfRoom = 0;
 var priceOfRoomWithSpa = 0;
-var numberGuestsRoom;
+var numberGuestsRoom = "double";
 var priceParkingNights = 10;
+var roomTotalPrice = 0;
+var totalNights = 1;
+var totalParkingNights = 0;
 
 var typeOfRoom = document.getElementById("room-select");
 var spaSelected = document.getElementById("spa-check");
 var guestsForRoom = document.getElementById("guest-select");
+var getNumberNights = document.getElementById("nights_num");
+var getParkingNights = document.getElementById("parking_num");
+
+function priceNumberNights () {
+  getNumberNights.addEventListener("change", function () {
+    totalNights = getNumberNights.value;
+    amountToPay(calculateTotalPrice(roomTotalPrice));
+  })
+}
+
+function parkingNumberNights () {
+  getParkingNights.addEventListener("change", function () {
+    totalParkingNights = getParkingNights.value;
+    amountToPay(calculateTotalPrice(roomTotalPrice));
+  })
+}
 
 function priceTypeOfRoom() {
   typeOfRoom.addEventListener("change", function () {
@@ -25,6 +44,7 @@ function priceTypeOfRoom() {
     } else if (typeOfRoom.value == "suite") {
       priceOfRoom = 150;
     }
+    amountToPay(calculateTotalPrice(roomTotalPrice));
   });
 }
 
@@ -35,6 +55,7 @@ function priceSpaSelected() {
     } else {
       priceOfRoomWithSpa = 0;
     }
+    amountToPay(calculateTotalPrice(roomTotalPrice));
   });
 }
 
@@ -47,11 +68,9 @@ function priceGuestForRoom() {
     } else if (guestsForRoom.value == "triple") {
         numberGuestsRoom = "triple";
     }
+    amountToPay(calculateTotalPrice(roomTotalPrice));
   });
 }
-
-var numberNights = () => document.getElementById("nights_num").value;
-var parkingNights = () => document.getElementById("parking_num").value;
 
 function calculateTotalPrice (roomTotalPrice) {
   roomTotalPrice = priceOfRoom + priceOfRoomWithSpa;
@@ -65,20 +84,22 @@ function calculateTotalPrice (roomTotalPrice) {
     default:
       roomTotalPrice;
   }
-  roomTotalPrice = roomTotalPrice * numberNights();//calculando nº de noches
-  roomTotalPrice = roomTotalPrice + (parkingNights() * priceParkingNights);//nº de noches + noches de parking
+  roomTotalPrice = roomTotalPrice * totalNights;//calculando nº de noches
+  roomTotalPrice = roomTotalPrice + (totalParkingNights * priceParkingNights);//nº de noches + noches de parking
   return roomTotalPrice;
 }
 
 priceGuestForRoom();
 priceTypeOfRoom();
 priceSpaSelected();
+parkingNumberNights ();
+priceNumberNights ();
+
 
 function amountToPay(result) {
   document.getElementById("operations-hotel").innerHTML = result;
 }
 
 document.getElementById("calculate-button").addEventListener("click", function () {
-    var roomTotalPrice = 0;
     amountToPay(calculateTotalPrice(roomTotalPrice));
-  }); 
+  });
