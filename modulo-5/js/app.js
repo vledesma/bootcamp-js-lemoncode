@@ -32,8 +32,8 @@ const cart = [
 // ------1.Mostrar una estructura de carrito de la compra.
 // 1.Listar todos los productos con for simple
 
-// for (i=0; i< carts.length; i++) {
-//   viewCartList(carts[i]);
+// for (i=0; i< cart.length; i++) {
+//   viewCartList(cart[i]);
 // }
 
 // function viewCartList(product) {
@@ -115,6 +115,33 @@ function viewPremium(product) {
 
 // Opcional
 
-// Si todos los productos son prime que diga "Gastos de envió cero", si no "Con gastos de envío.
-// Montarlo con HTML y API de HTML básica. (de esto tendríamos que haber hecho un ejemplo en la parte de dojo / kata).
-// Aplicar un descuento del 5% si la compra es mayor de 50 €
+// ------5. Si todos los productos son prime que diga "Gastos de envió cero", si no "Con gastos de envío.
+function checkPremium () {
+  if (product.premium) {
+    alert("Gastos de envío 0")
+  } else {
+    alert("Con gastos de envío")
+  }
+}
+checkPremium();
+// ------6. Montarlo con HTML y API de HTML básica. (de esto tendríamos que haber hecho un ejemplo en la parte de dojo / kata). Ver index
+
+for (i=0; i< cart.length; i++) {
+  printProducts( cart[i]);
+}
+
+function printProducts() {
+  document.getElementById("products").innerHTML += " id: " + cart[i].id + "<br>" + " Name: "+ cart[i].name + "<br>" + " Price: "+ cart[i].price + "<br>" + " Count: "+ cart[i].count + "<br>" + " Premium: "+ cart[i].premium + "<br>"+ "<br>" + "-----------" + "<br>" + "<br>" ;
+}
+
+// ------7. Aplicar un descuento del 5% si la compra es mayor de 50 €
+
+function discountForCart () {
+  if (totalCartPrice > 50) {
+    totalCartPrice = totalCartPrice - (totalCartPrice *0.05)
+  };
+}
+
+discountForCart();
+console.log(totalCartPrice);
+
