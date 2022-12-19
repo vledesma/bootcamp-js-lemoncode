@@ -1,147 +1,171 @@
-const cart = [
+// Constantes.
+const REGULAR_TYPE = 21;
+const LOWER_TYPE = 4;
+const EXEMPT_TYPE = 0;
+
+// Entrada.
+const products = [
   {
-  id: 198752,
-  name: "Tinta DJ27 Color",
-  price: 52.95,
-  count: 3,
-  premium: true
+    description: "Goma de borrar",
+    price: 0.25,
+    tax: LOWER_TYPE,
+    stock: 2,
+    units: 0,
   },
   {
-  id: 75621,
-  name: "Impresora ticketera PRO-201",
-  price: 32.75,
-  count: 2,
-  premium: true
+    description: "Lápiz H2",
+    price: 0.4,
+    tax: LOWER_TYPE,
+    stock: 5,
+    units: 0,
   },
   {
-  id: 54657,
-  name: "Caja de rollos de papel para ticketera",
-  price: 5.95,
-  count: 3,
-  premium: false
+    description: "Cinta rotular",
+    price: 9.3,
+    tax: REGULAR_TYPE,
+    stock: 2,
+    units: 0,
   },
   {
-  id: 3143,
-  name: "Caja de folios DIN-A4 80gr",
-  price: 9.95,
-  count: 2,
-  premium: false
-  }
+    description: "Papelera plástico",
+    price: 2.75,
+    tax: REGULAR_TYPE,
+    stock: 5,
+    units: 0,
+  },
+  {
+    description: "Escuadra",
+    price: 8.4,
+    tax: REGULAR_TYPE,
+    stock: 3,
+    units: 0,
+  },
+  {
+    description: "Pizarra blanca",
+    price: 5.95,
+    tax: REGULAR_TYPE,
+    stock: 2,
+    units: 0,
+  },
+  {
+    description: "Afilador",
+    price: 1.2,
+    tax: LOWER_TYPE,
+    stock: 10,
+    units: 0,
+  },
+  {
+    description: "Libro ABC",
+    price: 19,
+    tax: EXEMPT_TYPE,
+    stock: 2,
+    units: 0,
+  },
 ];
 
-// ------1.Mostrar una estructura de carrito de la compra.
-// 1.Listar todos los productos con for simple
+// 1.HTML Dinámico
 
-// for (i=0; i< cart.length; i++) {
-//   viewCartList(cart[i]);
-// }
+var calcButton = document.getElementById("btn");
 
-// function viewCartList(product) {
-//   console.log("----ID " + product.id + "------");
-//   console.log("Name: " + product.name);
-//   console.log("Price per product: " + product.price);
-//   console.log("Count: " + product.count);
-//   console.log("Premium: " + product.premium);
-//   console.log("Total price: " + product.count * product.price);
-// }
-
-// 1. Listar todos los productos con for of
-
-for (product of cart) {
-  viewCartList(product)
-}
-
-// function viewCartList(product) {
-//   console.log("----ID " + product.id + "------");
-//   console.log("Name: " + product.name);
-//   console.log("Price per product: " + product.price);
-//   console.log("Count: " + product.count);
-//   console.log("Premium: " + product.premium);
-//   console.log("Total price: " + product.count * product.price);
-// }
-
-// Simplificación de la función
-function viewCartList(product) {
-  console.log("--------");
-    for (features in product) {
-      console.log(features + ": " + product[features]);
-    }
-}
-
-
-// ------2. Eliminar un producto del carrito de la compra.
-
-var deleteFirstProduct = cart.shift();
-console.log(deleteFirstProduct);
-console.log(cart);
-
-//--volvemos a añadir el elemento
-
-var addFirstProduct = cart.unshift(
-  {
-  id: 198752,
-  name: "Tinta DJ27 Color",
-  price: 52.95,
-  count: 3,
-  premium: true
-  },
-  )
-
-  console.log(cart);
-
-// ------3. Calcular el total del carrito de la compra (ojo aquí truco multiplicar cantidad por valor).
-
-let totalCartPrice = 0;
-
-for (product of cart) {
-  totalCartPrice += product.price * product.count;
-}
-
-console.log("Total price of cart: " + totalCartPrice + "€");
-
-
-// ------4. Filtrar por los productos que sean premium.
-
-for (product of cart) {
-  if (product.premium) viewPremium(product);
-}
-
-function viewPremium(product) {
-  console.log("--------This is a Premium Product");
-    for (features in product) {
-      console.log(features + ": " + product[features]);
-    }
-}
-
-// Opcional
-
-// ------5. Si todos los productos son prime que diga "Gastos de envió cero", si no "Con gastos de envío.
-function checkPremium () {
-  if (product.premium) {
-    alert("Gastos de envío 0")
-  } else {
-    alert("Con gastos de envío")
+//Print description --> función para imprimir los atributos de los productos del array
+var printProducts = (productList) => {
+  //loop para tomar cada uno de los elementos del array como productos
+  for (var product of productList) {
+    getProduct(product); //imprime los productos del array
   }
-}
-checkPremium();
-// ------6. Montarlo con HTML y API de HTML básica. (de esto tendríamos que haber hecho un ejemplo en la parte de dojo / kata). Ver index
+  calcButton.disabled = activateButton();
+};
 
-for (i=0; i< cart.length; i++) {
-  printProducts( cart[i]);
-}
+//función para crear los productos y sus características
+var getProduct = (product) => {
+  //creación de un div para englobar descripción + precio + input (cantidad del producto)
+  var productItem = document.createElement("div");
+  productItem.setAttribute("class", "flex-container");
 
-function printProducts() {
-  document.getElementById("products").innerHTML += " id: " + cart[i].id + "<br>" + " Name: "+ cart[i].name + "<br>" + " Price: "+ cart[i].price + "<br>" + " Count: "+ cart[i].count + "<br>" + " Premium: "+ cart[i].premium + "<br>"+ "<br>" + "-----------" + "<br>" + "<br>" ;
-}
+  //creación de h5 para tomar la descripción + precio del producto
+  var productDescription = document.createElement("h5");
+  productDescription.innerText =product.description + " - " + product.price + "€";
 
-// ------7. Aplicar un descuento del 5% si la compra es mayor de 50 €
+  //creación de input para cantidad de productos
+  var input = document.createElement("input");
+  input.setAttribute("type", "number");// creación de input de type number
+  input.setAttribute("value", product.units); // por defecto input a 0
+  input.setAttribute("id", "total-items"); //ID para identificar input
+  input.setAttribute("min", 0); //min productos posibles 0
+  input.setAttribute("max", product.stock); //max productos posible stocks
+  input.addEventListener(
+    "change",(event) => {
+      product.units = Number(event.target.valueAsNumber);//guarda el change del input y lo convierte en nº (valueAsNumber)
+      calcButton.disabled = activateButton();
+  });
 
-function discountForCart () {
-  if (totalCartPrice > 50) {
-    totalCartPrice = totalCartPrice - (totalCartPrice *0.05)
+  //container para agregar div + description + input en el HTML
+  var container = document.getElementById("product-list-container");
+  container.appendChild(productItem).appendChild(productDescription).appendChild(input);
+};
+
+//2. Prepara un algoritmo que calcule la factura cuando pulsemos el botón calcular y muestre el resultado en los campos subtotal, impuestos y total.
+
+// FUNCIONES para Precios
+
+//variables para seleccionar elementos de precios
+var subtotalText = document.getElementById("subtotal");
+var ivaText = document.getElementById("total-taxes");
+var totalText = document.getElementById("total-cart");
+
+//funcion para calular precio item * producto y nº
+var getItemCost = (product) => {
+  var itemCost = product.price * product.units;
+  return itemCost;
+};
+
+//funcion para calular precio IVA
+var getIVA = (productList) => {
+  var iva = 0;
+  for (var product of productList) {
+    iva += getItemCost(product) * (product.tax / 100)
+  }
+  return iva;
+};
+
+//funcion para calular subtotal
+var getSubtotal = (productList) => {
+  var subtotal = 0;
+  for (var product of productList) {
+    subtotal += getItemCost(product)
   };
+  return subtotal;
+};
+
+//funcion para calular coste total
+var getTotalCost = (productList) => getSubtotal(productList) + getIVA(productList);
+
+//funcion para Imprimir productos
+var printPrice = (productList) => {
+  subtotalText.innerHTML = getSubtotal(productList).toFixed(2);
+  ivaText.innerHTML = getIVA(productList).toFixed(2);
+  totalText.innerHTML = getTotalCost(productList).toFixed(2);
 }
 
-discountForCart();
-console.log(totalCartPrice);
+//Botón calcular, controlador y función de activación
+calcButton.addEventListener("click", () => {
+  printPrice(products);
+})
+
+//Intenta hacer que el botón Calcular se habilite o deshabilite en función de si el usuario ha elegido al menos 1 unidad de algún producto o no
+
+function activateButton () {
+  for (var product of products) {
+    if (product.units > 0) {
+      return false
+    }
+  };
+  return true;
+};
+
+//invocación de funciones
+printProducts(products);
+
+
+
 
