@@ -65,8 +65,3 @@ button:hover {
 .hide-button {
   display: none;
 }
-
-.show-button {
-  display: flex;
-}
-

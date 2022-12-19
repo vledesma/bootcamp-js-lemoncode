@@ -64,7 +64,7 @@ const products = [
 ];
 
 // 1.HTML Dinámico
-
+// var para el botón
 var calcButton = document.getElementById("btn");
 
 //Print description --> función para imprimir los atributos de los productos del array
@@ -153,14 +153,17 @@ calcButton.addEventListener("click", () => {
 })
 
 //Intenta hacer que el botón Calcular se habilite o deshabilite en función de si el usuario ha elegido al menos 1 unidad de algún producto o no
+//iteración del loop de products para hacer que si un input >0 se añada la clase hidden o se quite al bloque button container
+var buttonContainer = document.getElementById("button-container");
 
 function activateButton () {
   for (var product of products) {
     if (product.units > 0) {
-      return false
+      return buttonContainer.classList.remove("hide-button")
+    } else {
+      return buttonContainer.classList.add("hide-button")
     }
   };
-  return true;
 };
 
 //invocación de funciones
