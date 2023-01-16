@@ -42,7 +42,8 @@ function finalResult(result) {
   else if (key >=5 ) {
     finalResult +="bill/s of " + key + ": " + result[key] + "<br>";
   }
-  }
+  };
+  
   document.getElementById("final-result").innerHTML = finalResult;
 };
 
