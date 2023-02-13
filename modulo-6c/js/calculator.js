@@ -29,7 +29,7 @@ var calculateChange = (amountPayed, totalPrice) => {
   return cashToReturn;
 };
 
-calculateChange();
+var cashToReturn2 = calculateChange();
 
 //Función para imprimir el resultado
 function finalResult(result) {
@@ -43,7 +43,7 @@ function finalResult(result) {
     finalResult +="bill/s of " + key + ": " + result[key] + "<br>";
   }
   };
-  
+
   document.getElementById("final-result").innerHTML = finalResult;
 };
 

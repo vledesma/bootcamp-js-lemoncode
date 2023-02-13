@@ -47,7 +47,7 @@ var decrypt = (text) => {
       result += plainAlphabet[encryptedAlphabet.indexOf(letter)];
     }
   }
-  return (textArea1.value = result); //return en textArea 1 de la iteración por encryptedAlphabet
+  textArea1.value = result; //return en textArea 1 de la iteración por encryptedAlphabet
 };
 
 var encrypt = (text) => {
@@ -63,7 +63,7 @@ var encrypt = (text) => {
       result += encryptedAlphabet[plainAlphabet.indexOf(letter)];
     }
   }
-  return (textArea2.value = result);
+  textArea2.value = result;
 };
 
 cryptButton.addEventListener("click", encrypt);
