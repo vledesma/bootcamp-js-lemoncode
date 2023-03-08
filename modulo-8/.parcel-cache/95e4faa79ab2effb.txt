@@ -1,0 +1,13 @@
+12
+82/home/vbl/bootcamp-JS/bootcamp-js-lemoncode/modulo-8/dist/modulo-8.3464ddca.js.map1678295525955212884 0
+78/home/vbl/bootcamp-JS/bootcamp-js-lemoncode/modulo-8/dist/modulo-8.3464ddca.js1678295525955212884 0
+75/home/vbl/bootcamp-JS/bootcamp-js-lemoncode/modulo-8/dist/index.579125c3.js1678295525947212885 0
+79/home/vbl/bootcamp-JS/bootcamp-js-lemoncode/modulo-8/dist/index.579125c3.js.map1678295525947212885 0
+57/home/vbl/bootcamp-JS/bootcamp-js-lemoncode/modulo-8/dist1678295525955212884 1
+68/home/vbl/bootcamp-JS/bootcamp-js-lemoncode/modulo-8/dist/index.html1678295525935212886 0
+70/home/vbl/bootcamp-JS/bootcamp-js-lemoncode/modulo-8/package-lock.json1678295210351264988 0
+65/home/vbl/bootcamp-JS/bootcamp-js-lemoncode/modulo-8/src/index.js1678295497391216435 0
+56/home/vbl/bootcamp-JS/bootcamp-js-lemoncode/modulo-8/src1678295491103217243 1
+63/home/vbl/bootcamp-JS/bootcamp-js-lemoncode/modulo-8/index.html1678295508107215081 0
+65/home/vbl/bootcamp-JS/bootcamp-js-lemoncode/modulo-8/package.json1678295163667275657 0
+52/home/vbl/bootcamp-JS/bootcamp-js-lemoncode/modulo-81678295525923212888 1
