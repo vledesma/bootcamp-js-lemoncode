@@ -566,19 +566,49 @@ window.onload = function() {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "printClientsAccounts", ()=>printClientsAccounts);
-var _dataBusiness = require("./data-business");
-var _clientBusiness = require("./client-business");
+var _clientBusinessJs = require("./client-business.js");
+var _dataBusinessJs = require("./data-business.js");
 function printClientsAccounts() {
-    const clients = (0, _dataBusiness.getClients)();
+    const clients = (0, _dataBusinessJs.getClients)();
     const ul = document.createElement("ul");
     for (let client of clients){
-        const element = (0, _clientBusiness.getClientElement)(client);
+        const element = (0, _clientBusinessJs.getClientElement)(client);
         ul.appendChild(element);
     }
     document.getElementById("root").appendChild(ul);
 }
 
-},{"./data-business":"609nB","./client-business":"9pZpQ","@parcel/transformer-js/src/esmodule-helpers.js":"jVCLE"}],"609nB":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jVCLE","./data-business.js":"609nB","./client-business.js":"9pZpQ"}],"jVCLE":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, "__esModule", {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"609nB":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "getClients", ()=>getClients);
@@ -752,40 +782,11 @@ function getAccounts() {
     ];
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"jVCLE"}],"jVCLE":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, "__esModule", {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
-
-},{}],"9pZpQ":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jVCLE"}],"9pZpQ":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "getClientElement", ()=>getClientElement);
+parcelHelpers.export(exports, "getClientNode", ()=>getClientNode);
 var _dataBusiness = require("./data-business");
 var _accountBusiness = require("./account-business");
 function getClientElement(client) {
@@ -810,7 +811,8 @@ function getFullName(client) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "getClientAccountsElement", ()=>getClientAccountsElement);
-var _styleBusiness = require("./style-business");
+parcelHelpers.export(exports, "getAccountElement", ()=>getAccountElement);
+var _styleBusinessJs = require("./style-business.js");
 function getClientAccountsElement(accounts) {
     const ul = document.createElement("ul");
     for (let account of accounts)ul.append(getAccountElement(account));
@@ -818,12 +820,12 @@ function getClientAccountsElement(accounts) {
 }
 function getAccountElement(account) {
     const li = document.createElement("li");
-    li.style = (0, _styleBusiness.getNodeStyle)(account);
-    li.append("[Balance: " + account.money + "] IBAN: " + account.iban);
+    li.style = (0, _styleBusinessJs.getNodeStyle)(account);
+    li.append("[Saldo: " + account.money + "] IBAN: " + account.iban);
     return li;
 }
 
-},{"./style-business":"gbYvY","@parcel/transformer-js/src/esmodule-helpers.js":"jVCLE"}],"gbYvY":[function(require,module,exports) {
+},{"./style-business.js":"gbYvY","@parcel/transformer-js/src/esmodule-helpers.js":"jVCLE"}],"gbYvY":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "getNodeStyle", ()=>getNodeStyle);

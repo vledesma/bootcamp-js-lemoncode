@@ -1,5 +1,5 @@
 import { printClientsAccounts } from "./client-list-business";
 
-window.onload = function() {
+window.onload = function () {
     printClientsAccounts();
-}
+};
