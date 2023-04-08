@@ -2,6 +2,7 @@ import axios from "axios";
 
 const BASE_URL = "https://rickandmortyapi.com/api";
 
+//getAllCharacters devuelve un array de los personajes
 const getAllCharacters = async () => {
   try {
     const response = await axios.get(`${BASE_URL}/character`);
@@ -11,6 +12,8 @@ const getAllCharacters = async () => {
   }
 };
 
+
+//devuelve información sobre un personaje específico dado su ID.
 const getCharacterById = async (id) => {
   try {
     const response = await axios.get(`${BASE_URL}/character/${id}`);
@@ -20,4 +23,6 @@ const getCharacterById = async (id) => {
   }
 };
 
+
+//exportacion de archivos
 export { getAllCharacters, getCharacterById };

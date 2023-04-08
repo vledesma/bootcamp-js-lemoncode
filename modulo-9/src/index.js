@@ -1,20 +1,26 @@
+//import axios
 import axios from "axios";
+
+//import styles
 import "./styles.css";
+
+//import functions from utils.js
 import { createCharacterRow, showCharacter } from "./utils.js";
 
 const API_BASE_URL = "https://rickandmortyapi.com/api";
 
+//elementos de index.html y alamacenados para print
 const rootElement = document.getElementById("root");
 const characterDetailElement = document.getElementById("character-detail");
 
-async function getCharacters() {
-  try {
-    const response = await axios.get(`${API_BASE_URL}/character`);
-    const characters = response.data.results;
-    return characters;
-  } catch (error) {
-    console.error(error);
-  }
+function getCharacters() {
+  return axios
+    .get(`${API_BASE_URL}/character`)
+    .then(response => response.data.results)
+    .catch(error => {
+      console.error(error);
+      throw error;
+    });
 }
 
 function renderCharacters(characters) {
@@ -28,9 +34,11 @@ function renderCharacters(characters) {
   });
 }
 
-async function init() {
-  const characters = await getCharacters();
-  renderCharacters(characters);
+//llamada a getCharacters y a renderCharacters esperando la respuesta para mostrar los personajes. si hay error mensaje de consola.
+function init() {
+  getCharacters()
+    .then(characters => renderCharacters(characters))
+    .catch(error => console.log("Something went wrogn"));
 }
 
 init();
